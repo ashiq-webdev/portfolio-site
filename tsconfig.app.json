@@ -20,7 +20,10 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    /* Added for portfolio */
+    "allowJs": true
   },
-  "include": ["src"]
+  "include": ["src", "src/vitest.d.ts"]
 }
