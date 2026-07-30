@@ -22,6 +22,12 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light {
+  background-color: #f0f0f5;
+  color: #1a1a2e;
 }
 
 a {
@@ -32,16 +38,6 @@ a {
 button {
   font-family: inherit;
   cursor: pointer;
-}
-
-.light {
-  background-color: #f0f0f5;
-  color: #1a1a2e;
-}
-
-body,
-.light {
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 :focus-visible {
