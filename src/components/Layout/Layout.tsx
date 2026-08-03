@@ -1,14 +1,16 @@
 import { Outlet } from 'react-router';
 import { Sidebar } from './Sidebar';
-import { useTheme } from '../../utils/useTheme';
 
-export function Layout() {
-  const { theme, toggleTheme } = useTheme();
+type LayoutProps = {
+  theme: string;
+  toggleTheme: () => void;
+};
 
+export function Layout({ theme, toggleTheme }: LayoutProps) {
   return (
-    <div className="flex min-h-screen" data-testid="layout">
+    <div className="flex min-h-dvh" data-testid="layout">
       <Sidebar theme={theme} onToggleTheme={toggleTheme} />
-      <main className="flex-1 px-6 py-8 md:px-16 md:py-16 max-w-4xl overflow-hidden">
+      <main className="flex-1 px-6 py-10 md:px-24 md:py-20 max-w-5xl">
         <Outlet />
       </main>
     </div>

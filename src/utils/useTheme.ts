@@ -1,22 +1,9 @@
-import { useEffect, useState } from 'react';
+const palette = {
+  background: '#0a0a0a',
+  heading: '#ccd6f6',
+  body: '#8892b0',
+  secondary: '#94a3b8',
+  accent: '#64ffda',
+};
 
-type Theme = 'dark' | 'light';
-
-export function useTheme() {
-  const [theme, setTheme] = useState<Theme>(() => {
-    const saved = localStorage.getItem('portfolio-theme');
-    if (saved === 'dark' || saved === 'light') return saved;
-    return 'dark';
-  });
-
-  useEffect(() => {
-    document.body.classList.toggle('light', theme === 'light');
-    localStorage.setItem('portfolio-theme', theme);
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
-  };
-
-  return { theme, toggleTheme };
-}
+export { palette };
