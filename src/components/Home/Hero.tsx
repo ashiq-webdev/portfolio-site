@@ -3,6 +3,15 @@ import { palette } from '../../utils/useTheme';
 const { heading, body, accent } = palette;
 
 export function Hero() {
+  function handleClick(e: React.MouseEvent<HTMLAnchorElement>) {
+    e.preventDefault();
+    window.history.pushState(null, '', '#projects');
+    const target = document.getElementById('projects');
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
   return (
     <section
       id="home"
@@ -29,10 +38,11 @@ export function Hero() {
           I build web apps with React and clean component architecture.
         </p>
         <p className="max-w-xl text-lg mb-12 leading-relaxed" style={{ color: body }}>
-          Learning MERN to ship full stack products.
+          Next I'll be learning the MERN stack to grow into full stack work.
         </p>
         <a
           href="#projects"
+          onClick={handleClick}
           className="inline-block font-mono text-sm px-6 py-3 border transition-colors"
           style={{ color: accent, borderColor: accent }}
           onMouseEnter={(e) => {
