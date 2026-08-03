@@ -1,14 +1,9 @@
 import { Link } from 'react-router';
+import { palette } from '../utils/useTheme';
 
-type NotFoundPageProps = {
-  theme: string;
-};
+const { heading, body, accent } = palette;
 
-export function NotFoundPage({ theme }: NotFoundPageProps) {
-  const accent = theme === 'dark' ? '#64ffda' : '#0f766e';
-  const heading = theme === 'dark' ? '#ccd6f6' : '#1a1a2e';
-  const body = theme === 'dark' ? '#8892b0' : '#495670';
-
+export function NotFoundPage() {
   return (
     <div
       data-testid="not-found-page"
