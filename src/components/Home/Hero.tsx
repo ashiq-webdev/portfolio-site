@@ -46,7 +46,7 @@ export function Hero() {
           className="inline-block font-mono text-sm px-6 py-3 border transition-colors"
           style={{ color: accent, borderColor: accent }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = 'rgba(100, 255, 218, 0.1)';
+            e.currentTarget.style.backgroundColor = 'rgba(56, 189, 248, 0.1)';
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.backgroundColor = 'transparent';

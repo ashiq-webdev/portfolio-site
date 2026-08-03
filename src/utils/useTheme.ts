@@ -1,9 +1,9 @@
 const palette = {
   background: '#0a0a0a',
-  heading: '#ccd6f6',
-  body: '#8892b0',
-  secondary: '#94a3b8',
-  accent: '#64ffda',
+  heading: '#e2e8f0',
+  body: '#94a3b8',
+  secondary: '#64748b',
+  accent: '#38bdf8',
 };
 
 export { palette };
