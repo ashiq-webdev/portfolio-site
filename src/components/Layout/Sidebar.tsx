@@ -83,7 +83,7 @@ export function Sidebar({ isMenuOpen, onMenuToggle }: SidebarProps) {
   return (
     <>
       {/* Desktop sidebar + mobile top bar */}
-      <aside
+      <header
         data-testid="sidebar"
         className="fixed md:sticky top-0 left-0 right-0 md:h-dvh z-50
                    flex md:flex-col items-center md:items-start justify-between
@@ -136,7 +136,7 @@ export function Sidebar({ isMenuOpen, onMenuToggle }: SidebarProps) {
             onMouseEnter={(e) => (e.currentTarget.style.color = accent)}
             onMouseLeave={(e) => (e.currentTarget.style.color = secondary)}
           >
-            <GithubLogoIcon size={20} weight="regular" />
+            <GithubLogoIcon size={22} weight="regular" />
           </a>
           <a
             href="https://linkedin.com/in/aash"
@@ -148,7 +148,7 @@ export function Sidebar({ isMenuOpen, onMenuToggle }: SidebarProps) {
             onMouseEnter={(e) => (e.currentTarget.style.color = accent)}
             onMouseLeave={(e) => (e.currentTarget.style.color = secondary)}
           >
-            <LinkedinLogoIcon size={20} weight="regular" />
+            <LinkedinLogoIcon size={22} weight="regular" />
           </a>
         </div>
 
@@ -163,7 +163,7 @@ export function Sidebar({ isMenuOpen, onMenuToggle }: SidebarProps) {
         >
           {isMenuOpen ? <XIcon size={24} weight="regular" /> : <ListIcon size={24} weight="regular" />}
         </button>
-      </aside>
+      </header>
 
       {/* Mobile menu: click-outside layer + 75%-width overlay */}
       {isMenuOpen && (

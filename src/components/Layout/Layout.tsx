@@ -12,7 +12,7 @@ export function Layout() {
         onMenuToggle={() => setIsMenuOpen((prev) => !prev)}
       />
       <main
-        className={`flex-1 px-6 py-10 md:px-24 md:py-20 transition-all duration-300 ${
+        className={`flex-1 px-6 py-10 md:px-24 md:py-10 transition-all duration-300 ${
           isMenuOpen ? 'blur-sm pointer-events-none' : ''
         }`}
       >

@@ -34,10 +34,10 @@ export function Hero() {
         >
           Frontend Developer.
         </h2>
-        <p className="max-w-xl text-lg mb-4 leading-relaxed" style={{ color: body }}>
+        <p className="max-w-xl text-base mb-4 leading-relaxed" style={{ color: body }}>
           I build web apps with React and clean component architecture.
         </p>
-        <p className="max-w-xl text-lg mb-12 leading-relaxed" style={{ color: body }}>
+        <p className="max-w-xl text-base mb-12 leading-relaxed" style={{ color: body }}>
           Next I'll be learning the MERN stack to grow into full stack work.
         </p>
         <a
