@@ -22,7 +22,7 @@ export function ProjectsGrid() {
             style={{ borderColor: '#262626', color: body, backgroundColor: 'transparent' }}
             onMouseEnter={(e) => {
               e.currentTarget.style.borderColor = accent;
-              e.currentTarget.style.backgroundColor = 'rgba(56, 189, 248, 0.03)';
+              e.currentTarget.style.backgroundColor = 'rgba(56, 189, 248, 0.05)';
               const titleEl = e.currentTarget.querySelector('h4');
               if (titleEl) titleEl.style.color = accent;
               const iconEl = e.currentTarget.querySelector('svg');

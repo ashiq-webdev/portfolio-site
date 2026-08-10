@@ -43,13 +43,15 @@ export function Hero() {
         <a
           href="#projects"
           onClick={handleClick}
-          className="inline-block font-mono text-sm px-6 py-3 border transition-colors"
-          style={{ color: accent, borderColor: accent }}
+          className="inline-block font-mono text-sm px-6 py-3 border rounded-full transition-colors"
+          style={{ color: accent, borderColor: accent, backgroundColor: 'transparent' }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = 'rgba(56, 189, 248, 0.1)';
+            e.currentTarget.style.backgroundColor = 'rgba(56, 189, 248, 0.5)';
+            e.currentTarget.style.color = heading;
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.backgroundColor = 'transparent';
+            e.currentTarget.style.color = accent;
           }}
         >
           View my work
