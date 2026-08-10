@@ -121,7 +121,7 @@ export function ProjectDetailPage() {
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 max-sm:max-w-[150px] font-mono text-sm px-5 py-2.5 rounded-lg border transition-colors duration-200"
+                className="inline-flex items-center gap-2 max-sm:max-w-37.5 font-mono text-sm px-5 py-2.5 rounded-lg border transition-colors duration-200"
                 style={{ color: accent, borderColor: accent }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.backgroundColor = 'rgba(56, 189, 248, 0.1)';

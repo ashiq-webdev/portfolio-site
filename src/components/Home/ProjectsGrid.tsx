@@ -1,19 +1,8 @@
+import { ArrowUpRightIcon } from '@phosphor-icons/react';
 import { palette } from '../../utils/useTheme';
+import { projects } from '../../utils/projects';
 
 const { heading, body, accent } = palette;
-
-const projects = [
-  {
-    slug: 'prayer-times-ae',
-    title: 'UAE Prayer Times App',
-    description: 'Prayer times with Hijri dates and Qibla direction for UAE cities.',
-  },
-  {
-    slug: 'dewa-bill-estimator',
-    title: 'DEWA Bill Estimator',
-    description: 'Estimate monthly electricity and water bills with UAE VAT applied.',
-  },
-];
 
 export function ProjectsGrid() {
   return (
@@ -24,24 +13,57 @@ export function ProjectsGrid() {
       <h3 className="text-3xl md:text-4xl font-bold mb-8" style={{ color: heading }}>
         Things I've Built
       </h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
+      <div className="group/list grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
         {projects.map((project) => (
           <a
             key={project.slug}
             href={`/projects/${project.slug}`}
-            className="block p-6 rounded-lg border border-neutral-800 transition-colors"
-            style={{ color: body }}
+            className="group block p-6 rounded-lg border transition-[opacity,border-color,background-color] duration-300 lg:hover:opacity-100! lg:group-hover/list:opacity-50"
+            style={{ borderColor: '#262626', color: body, backgroundColor: 'transparent' }}
             onMouseEnter={(e) => {
               e.currentTarget.style.borderColor = accent;
+              e.currentTarget.style.backgroundColor = 'rgba(56, 189, 248, 0.03)';
+              const titleEl = e.currentTarget.querySelector('h4');
+              if (titleEl) titleEl.style.color = accent;
+              const iconEl = e.currentTarget.querySelector('svg');
+              if (iconEl) iconEl.style.color = accent;
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.borderColor = '#262626';
+              e.currentTarget.style.backgroundColor = 'transparent';
+              const titleEl = e.currentTarget.querySelector('h4');
+              if (titleEl) titleEl.style.color = heading;
+              const iconEl = e.currentTarget.querySelector('svg');
+              if (iconEl) iconEl.style.color = heading;
             }}
           >
-            <h4 className="text-xl font-bold mb-2" style={{ color: heading }}>
-              {project.title}
-            </h4>
-            <p className="text-sm">{project.description}</p>
+            <div className="flex items-center gap-2 mb-2">
+              <h4 className="text-xl font-bold transition-colors duration-200" style={{ color: heading }}>
+                {project.title}
+              </h4>
+              <ArrowUpRightIcon
+                size={18}
+                weight="regular"
+                className="translate-y-px transition-transform duration-200 group-hover:translate-x-px group-hover:-translate-y-0.5"
+                style={{ color: heading }}
+              />
+            </div>
+            <p className="text-sm mb-4">{project.description}</p>
+            <ul className="flex flex-wrap gap-2">
+              {project.tech.map((tech) => (
+                <li
+                  key={tech}
+                  className="inline-block px-3 py-1 rounded-full text-xs font-mono"
+                  style={{
+                    backgroundColor: 'rgba(56, 189, 248, 0.1)',
+                    color: accent,
+                    border: '1px solid rgba(56, 189, 248, 0.2)',
+                  }}
+                >
+                  {tech}
+                </li>
+              ))}
+            </ul>
           </a>
         ))}
       </div>
