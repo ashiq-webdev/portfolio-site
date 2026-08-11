@@ -25,13 +25,10 @@ export function About() {
       </h3>
       <div className="max-w-2xl space-y-4 mb-12">
         <p style={{ color: body }}>
-          I'm Ashiq A, a frontend developer. I started learning web development and have
-          since built through React, TypeScript, JavaScript, Tailwind CSS, HTML, CSS,
-          Bootstrap, and Git.
+          I'm Ashiq A, a frontend developer. I started learning web development with HTML, CSS and JavaScript. I now build web applications with React.
         </p>
         <p style={{ color: body }}>
-          I'm targeting frontend developer roles in the UAE. Next I'll be learning the
-          MERN stack to grow into full stack work.
+          I'm targeting frontend developer roles in the UAE and working toward full stack development.
         </p>
       </div>
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 max-w-sm sm:max-w-md lg:max-w-2xl">

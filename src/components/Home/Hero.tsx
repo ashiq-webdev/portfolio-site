@@ -16,7 +16,7 @@ export function Hero() {
     /* Hero section */
     <section
       id="home"
-      className="mb-40 md:min-h-[calc(100dvh-15rem)] flex items-center"
+      className="mt-24 md:mt-0 mb-40 md:min-h-[calc(100dvh-15rem)] flex items-center"
       data-testid="hero-section"
     >
       <div>
