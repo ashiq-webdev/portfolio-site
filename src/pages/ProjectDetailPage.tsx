@@ -33,6 +33,7 @@ export function ProjectDetailPage() {
 
   if (!project) {
     return (
+      /* Project not found */
       <div className="py-10" data-testid="project-detail-page">
         <Link
           to="/#projects"
@@ -63,6 +64,7 @@ export function ProjectDetailPage() {
   const isComingSoon = project.overview.length === 0;
 
   return (
+    /* Details of a project page */
     <div className="py-10" data-testid="project-detail-page">
       {/* Back button — icon circle, text reveals on hover */}
       <Link

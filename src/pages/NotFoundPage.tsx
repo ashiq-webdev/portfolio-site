@@ -5,9 +5,10 @@ const { heading, body, accent } = palette;
 
 export function NotFoundPage() {
   return (
+    /* Not found page */
     <div
       data-testid="not-found-page"
-      className="min-h-[calc(100dvh-13rem)] flex flex-col items-center justify-center gap-4"
+      className="min-h-[calc(100dvh-15rem)] flex flex-col items-center justify-center gap-4"
     >
       <h1 className="text-6xl font-bold" style={{ color: heading }}>
         404

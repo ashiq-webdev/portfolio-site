@@ -32,7 +32,7 @@ export const projects: Project[] = [
       'React Router v8 does not handle hash fragments for scrolling by default. I used pushState plus scrollIntoView to update the URL and smooth-scroll to the target section. The IntersectionObserver watches section visibility and highlights the active nav link.',
       'The biggest surprise was Tailwind v4 CSS layer system. A manual reset written outside Tailwind layers silently overrode all padding and margin utilities. Removing it and trusting Tailwind built-in Preflight fixed every layout bug at once.',
     ],
-    githubUrl: 'https://github.com/aash/portfolio-site',
+    githubUrl: 'https://github.com/ashiq-webdev/portfolio-site',
     liveUrl: 'https://netlify.com',
   },
   {
@@ -43,7 +43,7 @@ export const projects: Project[] = [
     tech: ['React', 'TypeScript', 'Tailwind CSS', 'Aladhan API'],
     features: [],
     lessons: [],
-    githubUrl: 'https://github.com/aash/prayer-times-ae',
+    githubUrl: 'https://github.com/ashiq-webdev/prayer-times-uae',
     liveUrl: null,
   },
   {
@@ -54,7 +54,7 @@ export const projects: Project[] = [
     tech: ['React', 'TypeScript', 'Tailwind CSS', 'React Hook Form', 'Zod', 'Recharts'],
     features: [],
     lessons: [],
-    githubUrl: 'https://github.com/aash/dewa-bill-estimator',
+    githubUrl: 'https://github.com/ashiq-webdev/dewa-bill-estimator',
     liveUrl: null,
   },
 ];

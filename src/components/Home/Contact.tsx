@@ -4,6 +4,7 @@ const { heading, body, accent } = palette;
 
 export function Contact() {
   return (
+    /* Contact section */
     <section
       id="contact"
       className="mb-20 scroll-mt-20 min-h-[60vh] flex flex-col justify-center"
@@ -20,7 +21,7 @@ export function Contact() {
         I'll get back to you.
       </p>
       <a
-        href="mailto:ashiq@gmail.com"
+        href="mailto:ashiqtech20@gmail.com"
         className="inline-block font-mono text-sm px-6 py-3 border rounded-lg transition-colors mx-auto"
         style={{ color: accent, borderColor: accent, backgroundColor: 'transparent' }}
         onMouseEnter={(e) => {

@@ -94,7 +94,7 @@ export function Sidebar({ isMenuOpen, onMenuToggle }: SidebarProps) {
           onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.8')}
           onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
         >
-          Aash
+          Ashiq
         </a>
 
         {/* Desktop nav links */}
@@ -138,7 +138,7 @@ export function Sidebar({ isMenuOpen, onMenuToggle }: SidebarProps) {
         {/* Desktop social icons */}
         <div className="hidden md:flex md:items-center md:gap-5">
           <a
-            href="https://github.com/aash"
+            href="https://github.com/ashiq-webdev"
             target="_blank"
             rel="noopener noreferrer"
             className="transition-colors duration-200"
@@ -150,7 +150,7 @@ export function Sidebar({ isMenuOpen, onMenuToggle }: SidebarProps) {
             <GithubLogoIcon size={22} weight="regular" />
           </a>
           <a
-            href="https://linkedin.com/in/aash"
+            href="https://linkedin.com/in/ashiq-webdev"
             target="_blank"
             rel="noopener noreferrer"
             className="transition-colors duration-200"
@@ -216,7 +216,7 @@ export function Sidebar({ isMenuOpen, onMenuToggle }: SidebarProps) {
             {/* Social icons at bottom of overlay */}
             <div className="flex items-center gap-8 mt-8">
               <a
-                href="https://github.com/aash"
+                href="https://github.com/ashiq-webdev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transition-colors duration-200"
@@ -228,7 +228,7 @@ export function Sidebar({ isMenuOpen, onMenuToggle }: SidebarProps) {
                 <GithubLogoIcon size={28} weight="regular" />
               </a>
               <a
-                href="https://linkedin.com/in/aash"
+                href="https://linkedin.com/in/ashiq-webdev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transition-colors duration-200"

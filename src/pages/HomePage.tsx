@@ -5,6 +5,7 @@ import { Contact } from '../components/Home/Contact';
 
 export function HomePage() {
   return (
+    /* Content order */
     <div data-testid="home-page">
       <Hero />
       <About />

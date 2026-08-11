@@ -7,6 +7,7 @@ export function Layout() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
+    /* Website layout */
     <div className="flex mx-auto min-h-dvh max-w-5xl" data-testid="layout">
       <Sidebar
         isMenuOpen={isMenuOpen}

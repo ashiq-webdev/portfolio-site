@@ -6,6 +6,7 @@ const { heading, body, accent } = palette;
 
 export function ProjectsGrid() {
   return (
+    /* Projects section */
     <section id="projects" className="mb-20 md:mb-30 scroll-mt-20" data-testid="projects-section">
       <h2 className="font-mono text-sm mb-4" style={{ color: accent }}>
         02. Projects
@@ -48,7 +49,7 @@ export function ProjectsGrid() {
                 style={{ color: heading }}
               />
             </div>
-            <p className="text-sm mb-4">{project.description}</p>
+            <p className="text-base mb-4">{project.description}</p>
             <ul className="flex flex-wrap gap-2">
               {project.tech.map((tech) => (
                 <li

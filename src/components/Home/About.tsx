@@ -3,18 +3,19 @@ import { palette } from '../../utils/useTheme';
 const { heading, body, accent } = palette;
 
 const skills = [
+  { name: 'React', status: 'Completed' },
+  { name: 'JavaScript', status: 'Completed' },
   { name: 'HTML', status: 'Completed' },
   { name: 'CSS', status: 'Completed' },
-  { name: 'JavaScript', status: 'Completed' },
   { name: 'Bootstrap', status: 'Completed' },
-  { name: 'React', status: 'Completed' },
   { name: 'Git & GitHub', status: 'Completed' },
-  { name: 'Node.js', status: 'Learning' },
-  { name: 'MongoDB', status: 'Planned' },
+  { name: 'TypeScript', status: 'Learning' },
+  { name: 'Tailwind CSS', status: 'Learning' },
 ];
 
 export function About() {
   return (
+    /* About section */
     <section id="about" className="mb-40 scroll-mt-20" data-testid="about-section">
       <h2 className="font-mono text-sm mb-4" style={{ color: accent }}>
         01. About
@@ -24,7 +25,7 @@ export function About() {
       </h3>
       <div className="max-w-2xl space-y-4 mb-12">
         <p style={{ color: body }}>
-          I'm Aash, a frontend developer. I started learning web development and have
+          I'm Ashiq A, a frontend developer. I started learning web development and have
           since built through React, TypeScript, JavaScript, Tailwind CSS, HTML, CSS,
           Bootstrap, and Git.
         </p>

@@ -13,6 +13,7 @@ export function Hero() {
   }
 
   return (
+    /* Hero section */
     <section
       id="home"
       className="mb-40 md:min-h-[calc(100dvh-15rem)] flex items-center"
@@ -26,7 +27,7 @@ export function Hero() {
           className="text-5xl md:text-7xl font-bold mb-4 leading-tight"
           style={{ color: heading }}
         >
-          Aash
+          Ashiq A
         </h1>
         <h2
           className="text-3xl md:text-5xl font-bold mb-8 leading-tight"
