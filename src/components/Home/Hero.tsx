@@ -15,7 +15,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="min-h-[calc(100dvh-4rem)] flex items-center py-20"
+      className="mb-40 md:min-h-[calc(100dvh-15rem)] flex items-center"
       data-testid="hero-section"
     >
       <div>
@@ -43,7 +43,7 @@ export function Hero() {
         <a
           href="#projects"
           onClick={handleClick}
-          className="inline-block font-mono text-sm px-6 py-3 border rounded-full transition-colors"
+          className="inline-block font-mono text-sm px-6 py-3 border rounded-lg transition-colors"
           style={{ color: accent, borderColor: accent, backgroundColor: 'transparent' }}
           onMouseEnter={(e) => {
             e.currentTarget.style.backgroundColor = 'rgba(56, 189, 248, 0.5)';

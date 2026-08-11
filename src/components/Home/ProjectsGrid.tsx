@@ -6,14 +6,14 @@ const { heading, body, accent } = palette;
 
 export function ProjectsGrid() {
   return (
-    <section id="projects" className="py-20" data-testid="projects-section">
+    <section id="projects" className="mb-20 md:mb-30 scroll-mt-20" data-testid="projects-section">
       <h2 className="font-mono text-sm mb-4" style={{ color: accent }}>
         02. Projects
       </h2>
       <h3 className="text-3xl md:text-4xl font-bold mb-8" style={{ color: heading }}>
         Things I've Built
       </h3>
-      <div className="group/list grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
+      <div className="group/list grid grid-cols-1 gap-6 max-w-xl">
         {projects.map((project) => (
           <a
             key={project.slug}

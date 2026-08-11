@@ -15,7 +15,7 @@ const skills = [
 
 export function About() {
   return (
-    <section id="about" className="py-20" data-testid="about-section">
+    <section id="about" className="mb-40 scroll-mt-20" data-testid="about-section">
       <h2 className="font-mono text-sm mb-4" style={{ color: accent }}>
         01. About
       </h2>
@@ -33,12 +33,12 @@ export function About() {
           MERN stack to grow into full stack work.
         </p>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 max-w-sm sm:max-w-md lg:max-w-2xl">
         {skills.map((skill) => (
           <div
             key={skill.name}
-            className="font-mono text-sm px-3 py-2 rounded border border-neutral-800 text-center"
-            style={{ color: body }}
+            className="font-mono text-sm px-3 py-2 rounded-lg border text-center max-w-40"
+            style={{ color: body, borderColor: 'rgba(56, 189, 248, 0.5)' }}
           >
             {skill.name}
             <span className="block text-xs mt-1" style={{ color: accent }}>

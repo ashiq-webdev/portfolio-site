@@ -6,7 +6,7 @@ const { body, accent, secondary } = palette;
 export function Footer() {
   return (
     <footer
-      className="pt-10 pb-5 flex flex-col items-center gap-4 text-center"
+      className="pt-10 pb-4 flex flex-col items-center gap-4 text-center"
       data-testid="footer"
     >
       <p className="font-mono text-sm" style={{ color: body }}>

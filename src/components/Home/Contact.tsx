@@ -6,7 +6,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="py-20 min-h-[60vh] flex flex-col justify-center"
+      className="mb-20 scroll-mt-20 min-h-[60vh] flex flex-col justify-center"
       data-testid="contact-section"
     >
       <h2 className="font-mono text-sm mb-4 text-center" style={{ color: accent }}>
@@ -21,7 +21,7 @@ export function Contact() {
       </p>
       <a
         href="mailto:ashiq@gmail.com"
-        className="inline-block font-mono text-sm px-6 py-3 border rounded-full transition-colors mx-auto"
+        className="inline-block font-mono text-sm px-6 py-3 border rounded-lg transition-colors mx-auto"
         style={{ color: accent, borderColor: accent, backgroundColor: 'transparent' }}
         onMouseEnter={(e) => {
           e.currentTarget.style.backgroundColor = 'rgba(56, 189, 248, 0.5)';

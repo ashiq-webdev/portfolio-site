@@ -72,7 +72,7 @@ export function ProjectDetailPage() {
         style={{ color: accent }}
       >
         <span
-          className="flex items-center justify-center w-8 h-8 rounded-full border transition-colors duration-300"
+          className="flex items-center justify-center w-8 h-8 rounded-full border group-hover:bg-[#38bdf8]/30 transition-colors duration-300"
           style={{ borderColor: accent }}
         >
           <ArrowLeftIcon size={16} weight="regular" />
@@ -104,16 +104,22 @@ export function ProjectDetailPage() {
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 max-sm:max-w-25 font-mono text-sm px-5 py-2.5 rounded-lg border transition-colors duration-200"
-              style={{ color: accent, borderColor: accent }}
+              className="group inline-flex items-center gap-2 max-sm:max-w-25 font-mono text-sm px-5 py-2.5 rounded-lg border transition-colors duration-200"
+              style={{ color: accent, borderColor: accent, backgroundColor: 'transparent' }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = 'rgba(56, 189, 248, 0.1)';
+                e.currentTarget.style.backgroundColor = 'rgba(56, 189, 248, 0.5)';
+                e.currentTarget.style.color = heading;
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.backgroundColor = 'transparent';
+                e.currentTarget.style.color = accent;
               }}
             >
-              <GithubLogoIcon size={20} weight="regular" />
+              <GithubLogoIcon 
+                size={20} 
+                weight="regular" 
+                className="transition-transform duration-200 group-hover:scale-110"
+              />
               Code
             </a>
             {project.liveUrl && (
@@ -121,16 +127,22 @@ export function ProjectDetailPage() {
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 max-sm:max-w-37.5 font-mono text-sm px-5 py-2.5 rounded-lg border transition-colors duration-200"
-                style={{ color: accent, borderColor: accent }}
+                className="group inline-flex items-center gap-2 max-sm:max-w-37.5 font-mono text-sm px-5 py-2.5 rounded-lg border transition-colors duration-200"
+                style={{ color: accent, borderColor: accent, backgroundColor: 'transparent' }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = 'rgba(56, 189, 248, 0.1)';
+                  e.currentTarget.style.backgroundColor = 'rgba(56, 189, 248, 0.5)';
+                  e.currentTarget.style.color = heading;
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.backgroundColor = 'transparent';
+                  e.currentTarget.style.color = accent;
                 }}
               >
-                <ArrowUpRightIcon size={20} weight="regular" />
+                <ArrowUpRightIcon 
+                  size={20} 
+                  weight="regular" 
+                  className="translate-y-px transition-transform duration-200 group-hover:translate-x-px group-hover:-translate-y-0.5"
+                />
                 Visit Site
               </a>
             )}

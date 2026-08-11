@@ -7,13 +7,13 @@ export function Layout() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="flex min-h-dvh" data-testid="layout">
+    <div className="flex mx-auto min-h-dvh max-w-5xl" data-testid="layout">
       <Sidebar
         isMenuOpen={isMenuOpen}
         onMenuToggle={() => setIsMenuOpen((prev) => !prev)}
       />
       <main
-        className={`flex-1 flex flex-col px-6 py-10 md:px-24 md:py-10 transition-all duration-300 ${
+        className={`flex-1 flex flex-col px-6 py-10 md:pl-2 md:py-16 transition-all duration-300 ${
           isMenuOpen ? 'blur-sm pointer-events-none' : ''
         }`}
       >
