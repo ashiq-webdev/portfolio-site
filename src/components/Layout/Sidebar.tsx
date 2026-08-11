@@ -89,12 +89,18 @@ export function Sidebar({ isMenuOpen, onMenuToggle }: SidebarProps) {
       >
         <a
           href="/"
-          className="font-mono font-bold text-lg no-underline transition-colors duration-200"
-          style={{ color: accent }}
+          className="no-underline transition-opacity duration-200"
+          aria-label="Home"
           onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.8')}
           onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
         >
-          Ashiq
+          <img
+            src="/logo.png"
+            alt="Home"
+            width="28"
+            height="28"
+            className="w-7 h-7 md:w-8 md:h-8 rounded-lg"
+          />
         </a>
 
         {/* Desktop nav links */}
