@@ -1,5 +1,5 @@
 import { GithubLogoIcon, LinkedinLogoIcon } from '@phosphor-icons/react';
-import { palette } from '../../utils/useTheme';
+import { palette } from '../../utils/palette';
 
 const { body, accent, secondary } = palette;
 

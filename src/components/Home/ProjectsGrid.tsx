@@ -1,5 +1,5 @@
 import { ArrowUpRightIcon } from '@phosphor-icons/react';
-import { palette } from '../../utils/useTheme';
+import { palette } from '../../utils/palette';
 import { projects } from '../../utils/projects';
 
 const { heading, body, accent } = palette;

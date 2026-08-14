@@ -1,4 +1,4 @@
-import { palette } from '../../utils/useTheme';
+import { palette } from '../../utils/palette';
 
 const { heading, body, accent } = palette;
 

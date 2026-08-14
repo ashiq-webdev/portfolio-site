@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router';
 import { GithubLogoIcon, LinkedinLogoIcon, ListIcon, XIcon } from '@phosphor-icons/react';
-import { palette } from '../../utils/useTheme';
+import { palette } from '../../utils/palette';
 
 const { accent, body } = palette;
 
