@@ -1,7 +1,7 @@
 import { GithubLogoIcon, LinkedinLogoIcon } from '@phosphor-icons/react';
 import { palette } from '../../utils/palette';
 
-const { body, accent, secondary } = palette;
+const { body, accent } = palette;
 
 export function Footer() {
   return (
@@ -22,10 +22,10 @@ export function Footer() {
           target="_blank"
           rel="noopener noreferrer"
           className="transition-colors"
-          style={{ color: secondary }}
+          style={{ color: body }}
           aria-label="GitHub profile"
           onMouseEnter={(e) => (e.currentTarget.style.color = accent)}
-          onMouseLeave={(e) => (e.currentTarget.style.color = secondary)}
+          onMouseLeave={(e) => (e.currentTarget.style.color = body)}
         >
           <GithubLogoIcon size={22} weight="regular" />
         </a>
@@ -34,10 +34,10 @@ export function Footer() {
           target="_blank"
           rel="noopener noreferrer"
           className="transition-colors"
-          style={{ color: secondary }}
+          style={{ color: body }}
           aria-label="LinkedIn profile"
           onMouseEnter={(e) => (e.currentTarget.style.color = accent)}
-          onMouseLeave={(e) => (e.currentTarget.style.color = secondary)}
+          onMouseLeave={(e) => (e.currentTarget.style.color = body)}
         >
           <LinkedinLogoIcon size={22} weight="regular" />
         </a>
