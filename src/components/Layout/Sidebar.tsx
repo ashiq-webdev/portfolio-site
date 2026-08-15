@@ -2,9 +2,6 @@ import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router';
 import { ListIcon, XIcon } from '@phosphor-icons/react';
 import { SocialIcons } from '../SocialIcons';
-import { palette } from '../../utils/palette';
-
-const { accent, body } = palette;
 
 const navItems = [
   { hash: '#about', label: 'About' },
@@ -72,8 +69,6 @@ export function Sidebar({ isMenuOpen, onMenuToggle }: SidebarProps) {
     return activeSection === hash.replace('#', '');
   }
 
-  const accentRgb = '56, 189, 248';
-
   return (
     <>
       {/* Desktop sidebar + mobile top bar */}
@@ -85,15 +80,12 @@ export function Sidebar({ isMenuOpen, onMenuToggle }: SidebarProps) {
                    backdrop-blur md:backdrop-blur-none
                    border-b md:border-b-0 border-neutral-800/50
                    px-6 py-4 md:py-24
-                   md:w-64 md:min-w-64"
-        style={{ color: palette.heading }}
+                   md:w-64 md:min-w-64 text-heading"
       >
         <a
           href="/"
-          className="no-underline transition-opacity duration-200"
+          className="no-underline hover:opacity-80 transition-opacity duration-200"
           aria-label="Home"
-          onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.8')}
-          onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
         >
           <img
             src="/logo.png"
@@ -113,28 +105,12 @@ export function Sidebar({ isMenuOpen, onMenuToggle }: SidebarProps) {
                 key={item.hash}
                 href={item.hash}
                 onClick={(e) => handleClick(e, item.hash)}
-                className="group font-mono text-sm transition-all duration-200
-                           border-l-2 pl-3 -ml-3 py-2 pr-3 rounded-lg max-w-43"
-                style={{
-                  color: active ? accent : body,
-                  fontWeight: active ? 600 : 400,
-                  borderLeftColor: active ? accent : 'transparent',
-                  backgroundColor: active ? `rgba(${accentRgb}, 0.2)` : 'transparent',
-                }}
-                onMouseEnter={(e) => {
-                  if (!active) {
-                    e.currentTarget.style.color = accent;
-                    e.currentTarget.style.fontWeight = '500';
-                    e.currentTarget.style.backgroundColor = `rgba(${accentRgb}, 0.06)`;
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (!active) {
-                    e.currentTarget.style.color = body;
-                    e.currentTarget.style.fontWeight = '400';
-                    e.currentTarget.style.backgroundColor = 'transparent';
-                  }
-                }}
+                className={`group font-mono text-sm transition-all duration-200
+                           border-l-2 pl-3 -ml-3 py-2 pr-3 rounded-lg max-w-43
+                           ${active
+                              ? 'text-accent font-semibold border-accent bg-accent/20'
+                              : 'text-body font-normal border-transparent bg-transparent hover:text-accent hover:font-medium hover:bg-accent/6'
+                           }`}
               >
                 {item.label}
               </a>
@@ -151,8 +127,7 @@ export function Sidebar({ isMenuOpen, onMenuToggle }: SidebarProps) {
         <button
           type="button"
           onClick={onMenuToggle}
-          className="md:hidden flex items-center justify-center transition-colors duration-200"
-          style={{ color: accent }}
+          className="md:hidden flex items-center justify-center text-accent transition-colors duration-200"
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={isMenuOpen}
         >
@@ -186,11 +161,8 @@ export function Sidebar({ isMenuOpen, onMenuToggle }: SidebarProps) {
                   key={item.hash}
                   href={item.hash}
                   onClick={(e) => handleClick(e, item.hash)}
-                  className="font-mono text-2xl transition-all duration-200"
-                  style={{
-                    color: active ? accent : body,
-                    fontWeight: active ? 600 : 400,
-                  }}
+                  className={`font-mono text-2xl transition-all duration-200
+                             ${active ? 'text-accent font-semibold' : 'text-body font-normal'}`}
                 >
                   {item.label}
                 </a>

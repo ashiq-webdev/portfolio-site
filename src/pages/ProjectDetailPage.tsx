@@ -1,9 +1,6 @@
 import { useParams, Link, useNavigate, useLocation } from 'react-router';
 import { ArrowLeftIcon, ArrowUpRightIcon, GithubLogoIcon } from '@phosphor-icons/react';
-import { palette } from '../utils/palette';
 import { projects } from '../utils/projects';
-
-const { heading, body, accent } = palette;
 
 type BackButtonProps = {
   onClick: (e: React.MouseEvent<HTMLAnchorElement>) => void;
@@ -14,12 +11,10 @@ function BackButton({ onClick }: BackButtonProps) {
     <Link
       to="/#projects"
       onClick={onClick}
-      className="group inline-flex items-center gap-0 mb-10 transition-all duration-300"
-      style={{ color: accent }}
+      className="group inline-flex items-center gap-0 mb-10 transition-all duration-300 text-accent"
     >
       <span
-        className="flex items-center justify-center w-8 h-8 rounded-full border group-hover:bg-[#38bdf8]/30 transition-colors duration-300"
-        style={{ borderColor: accent }}
+        className="flex items-center justify-center w-8 h-8 rounded-full border border-accent group-hover:bg-accent/30 transition-colors duration-300"
       >
         <ArrowLeftIcon size={16} weight="regular" />
     </span>
@@ -43,16 +38,7 @@ function CtaButton({ href, icon, children, className = '' }: CtaButtonProps) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`group inline-flex items-center gap-2 font-mono text-sm px-5 py-2.5 rounded-lg border transition-colors duration-200 ${className}`}
-      style={{ color: accent, borderColor: accent, backgroundColor: 'transparent' }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.backgroundColor = 'rgba(56, 189, 248, 0.5)';
-        e.currentTarget.style.color = heading;
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.backgroundColor = 'transparent';
-        e.currentTarget.style.color = accent;
-      }}
+      className={`group inline-flex items-center gap-2 font-mono text-sm px-5 py-2.5 rounded-lg border text-accent border-accent bg-transparent hover:bg-accent/50 hover:text-heading transition-colors duration-200 ${className}`}
     >
       {icon}
       {children}
@@ -91,10 +77,10 @@ export function ProjectDetailPage() {
       /* Project not found */
       <div className="py-10" data-testid="project-detail-page">
         <BackButton onClick={handleBackClick} />
-        <h1 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: heading }}>
+        <h1 className="text-3xl md:text-4xl font-bold mb-4 text-heading">
           Project not found
       </h1>
-        <p className="max-w-2xl text-base" style={{ color: body }}>
+        <p className="max-w-2xl text-base text-body">
           The project you are looking for does not exist.
       </p>
     </div>
@@ -109,16 +95,16 @@ export function ProjectDetailPage() {
       <BackButton onClick={handleBackClick} />
 
       {/* Project header */}
-      <h1 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: heading }}>
+      <h1 className="text-3xl md:text-4xl font-bold mb-4 text-heading">
         {project.title}
     </h1>
-      <p className="text-lg mb-8 max-w-2xl" style={{ color: body }}>
+      <p className="text-lg mb-8 max-w-2xl text-body">
         {project.description}
     </p>
 
       {isComingSoon ? (
         <div className="min-h-[50vh] flex items-center justify-center">
-          <p className="text-lg text-center" style={{ color: body }}>
+          <p className="text-lg text-center text-body">
             This project is in progress. Check back soon.
         </p>
       </div>
@@ -159,11 +145,11 @@ export function ProjectDetailPage() {
           <div className="max-w-2xl">
             {/* Overview */}
             <section className="mb-12">
-              <h2 className="font-mono text-sm mb-4" style={{ color: body }}>
+              <h2 className="font-mono text-sm mb-4 text-body">
                 Overview
             </h2>
               {project.overview.map((paragraph, i) => (
-                <p key={i} className="text-base mb-4 leading-relaxed" style={{ color: body }}>
+                <p key={i} className="text-base mb-4 leading-relaxed text-body">
                   {paragraph}
               </p>
               ))}
@@ -171,13 +157,13 @@ export function ProjectDetailPage() {
 
             {/* Tech Stack */}
             <section className="mb-12">
-              <h2 className="font-mono text-sm mb-4" style={{ color: body }}>
+              <h2 className="font-mono text-sm mb-4 text-body">
                 Tech Stack
             </h2>
-              <ul className="flex flex-wrap gap-x-5 gap-y-2 font-mono text-base" style={{ color: body }}>
+              <ul className="flex flex-wrap gap-x-5 gap-y-2 font-mono text-base text-body">
                 {project.tech.map((tech) => (
                   <li key={tech} className="flex items-center gap-2">
-                    <span style={{ color: accent }}>▹</span>
+                    <span className="text-accent">▹</span>
                     {tech}
                 </li>
                 ))}
@@ -186,13 +172,13 @@ export function ProjectDetailPage() {
 
             {/* Features */}
             <section className="mb-12">
-              <h2 className="font-mono text-sm mb-4" style={{ color: body }}>
+              <h2 className="font-mono text-sm mb-4 text-body">
                 Features
             </h2>
-              <ul className="space-y-3 text-base" style={{ color: body }}>
+              <ul className="space-y-3 text-base text-body">
                 {project.features.map((feature) => (
                   <li key={feature} className="flex gap-2">
-                    <span style={{ color: accent }}>▹</span>
+                    <span className="text-accent">▹</span>
                     {feature}
                 </li>
                 ))}
@@ -201,11 +187,11 @@ export function ProjectDetailPage() {
 
             {/* What I've Learned */}
             <section className="mb-12">
-              <h2 className="font-mono text-sm mb-4" style={{ color: body }}>
+              <h2 className="font-mono text-sm mb-4 text-body">
                 What I've Learned
             </h2>
               {project.lessons.map((paragraph, i) => (
-                <p key={i} className="text-base mb-4 leading-relaxed" style={{ color: body }}>
+                <p key={i} className="text-base mb-4 leading-relaxed text-body">
                   {paragraph}
               </p>
               ))}

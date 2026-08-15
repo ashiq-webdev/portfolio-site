@@ -1,7 +1,4 @@
 import { SocialIcons } from '../SocialIcons';
-import { palette } from '../../utils/palette';
-
-const { body } = palette;
 
 export function Footer() {
   return (
@@ -10,10 +7,10 @@ export function Footer() {
       className="pt-10 pb-4 flex flex-col items-center gap-4 text-center"
       data-testid="footer"
     >
-      <p className="font-mono text-sm" style={{ color: body }}>
+      <p className="font-mono text-sm text-body">
         Built with React, TypeScript and Tailwind CSS.
       </p>
-      <p className="font-mono text-sm" style={{ color: body }}>
+      <p className="font-mono text-sm text-body">
         Built by Ashiq A. <span className="text-base">©</span> 2026
       </p>
       <div className="flex items-center gap-5 mt-2 md:hidden">

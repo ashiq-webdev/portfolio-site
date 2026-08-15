@@ -1,7 +1,3 @@
-import { palette } from '../../utils/palette';
-
-const { heading, body, accent } = palette;
-
 const skills = [
   { name: 'React', status: 'Completed' },
   { name: 'JavaScript', status: 'Completed' },
@@ -17,17 +13,17 @@ export function About() {
   return (
     /* About section */
     <section id="about" className="mb-40 scroll-mt-20" data-testid="about-section">
-      <h2 className="font-mono text-sm mb-4" style={{ color: accent }}>
+      <h2 className="font-mono text-sm mb-4 text-accent">
         01. About
       </h2>
-      <h3 className="text-3xl md:text-4xl font-bold mb-8" style={{ color: heading }}>
+      <h3 className="text-3xl md:text-4xl font-bold mb-8 text-heading">
         About Me
       </h3>
       <div className="max-w-2xl space-y-4 mb-12">
-        <p style={{ color: body }}>
+        <p className="text-body">
           I'm Ashiq A, a frontend developer. I started learning web development with HTML, CSS and JavaScript. I now build web applications with React.
         </p>
-        <p style={{ color: body }}>
+        <p className="text-body">
           I'm targeting frontend developer roles in the UAE and working toward full stack development.
         </p>
       </div>
@@ -35,11 +31,10 @@ export function About() {
         {skills.map((skill) => (
           <div
             key={skill.name}
-            className="font-mono text-sm px-3 py-2 rounded-lg border text-center max-w-40"
-            style={{ color: body, borderColor: 'rgba(56, 189, 248, 0.5)' }}
+            className="font-mono text-sm px-3 py-2 rounded-lg border text-center max-w-40 text-body border-accent/50"
           >
             {skill.name}
-            <span className="block text-xs mt-1" style={{ color: accent }}>
+            <span className="block text-xs mt-1 text-accent">
               {skill.status}
             </span>
           </div>
