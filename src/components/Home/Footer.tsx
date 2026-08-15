@@ -1,7 +1,7 @@
-import { GithubLogoIcon, LinkedinLogoIcon } from '@phosphor-icons/react';
+import { SocialIcons } from '../SocialIcons';
 import { palette } from '../../utils/palette';
 
-const { body, accent } = palette;
+const { body } = palette;
 
 export function Footer() {
   return (
@@ -17,30 +17,7 @@ export function Footer() {
         Built by Ashiq A. <span className="text-base">©</span> 2026
       </p>
       <div className="flex items-center gap-5 mt-2 md:hidden">
-        <a
-          href="https://github.com/ashiq-webdev"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="transition-colors"
-          style={{ color: body }}
-          aria-label="GitHub profile"
-          onMouseEnter={(e) => (e.currentTarget.style.color = accent)}
-          onMouseLeave={(e) => (e.currentTarget.style.color = body)}
-        >
-          <GithubLogoIcon size={22} weight="regular" />
-        </a>
-        <a
-          href="https://linkedin.com/in/ashiq-webdev"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="transition-colors"
-          style={{ color: body }}
-          aria-label="LinkedIn profile"
-          onMouseEnter={(e) => (e.currentTarget.style.color = accent)}
-          onMouseLeave={(e) => (e.currentTarget.style.color = body)}
-        >
-          <LinkedinLogoIcon size={22} weight="regular" />
-        </a>
+        <SocialIcons size={22} />
       </div>
     </footer>
   );

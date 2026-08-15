@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router';
-import { GithubLogoIcon, LinkedinLogoIcon, ListIcon, XIcon } from '@phosphor-icons/react';
+import { ListIcon, XIcon } from '@phosphor-icons/react';
+import { SocialIcons } from '../SocialIcons';
 import { palette } from '../../utils/palette';
 
 const { accent, body } = palette;
@@ -142,31 +143,8 @@ export function Sidebar({ isMenuOpen, onMenuToggle }: SidebarProps) {
         </nav>
 
         {/* Desktop social icons */}
-        <div className="hidden md:flex md:items-center md:gap-5">
-          <a
-            href="https://github.com/ashiq-webdev"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-colors duration-200"
-            style={{ color: body }}
-            aria-label="GitHub profile"
-            onMouseEnter={(e) => (e.currentTarget.style.color = accent)}
-            onMouseLeave={(e) => (e.currentTarget.style.color = body)}
-          >
-            <GithubLogoIcon size={22} weight="regular" />
-          </a>
-          <a
-            href="https://linkedin.com/in/ashiq-webdev"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-colors duration-200"
-            style={{ color: body }}
-            aria-label="LinkedIn profile"
-            onMouseEnter={(e) => (e.currentTarget.style.color = accent)}
-            onMouseLeave={(e) => (e.currentTarget.style.color = body)}
-          >
-            <LinkedinLogoIcon size={22} weight="regular" />
-          </a>
+        <div className="hidden md:flex md:items-center md:gap-5 md:mt-2">
+          <SocialIcons size={22} />
         </div>
 
         {/* Mobile hamburger button */}
@@ -221,30 +199,7 @@ export function Sidebar({ isMenuOpen, onMenuToggle }: SidebarProps) {
 
             {/* Social icons at bottom of overlay */}
             <div className="flex items-center gap-8 mt-8">
-              <a
-                href="https://github.com/ashiq-webdev"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-colors duration-200"
-                style={{ color: body }}
-                aria-label="GitHub profile"
-                onMouseEnter={(e) => (e.currentTarget.style.color = accent)}
-                onMouseLeave={(e) => (e.currentTarget.style.color = body)}
-              >
-                <GithubLogoIcon size={28} weight="regular" />
-              </a>
-              <a
-                href="https://linkedin.com/in/ashiq-webdev"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-colors duration-200"
-                style={{ color: body }}
-                aria-label="LinkedIn profile"
-                onMouseEnter={(e) => (e.currentTarget.style.color = accent)}
-                onMouseLeave={(e) => (e.currentTarget.style.color = body)}
-              >
-                <LinkedinLogoIcon size={28} weight="regular" />
-              </a>
+              <SocialIcons size={28} />
             </div>
           </div>
         </div>
