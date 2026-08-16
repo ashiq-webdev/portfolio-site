@@ -1,75 +1,141 @@
-# React + TypeScript + Vite
+# Portfolio Site
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A single-page scroll developer portfolio built with React 19, Vite and Tailwind CSS v4. Left sidebar navigation on desktop, hamburger menu on mobile and project detail pages with dynamic routes.
 
-Currently, two official plugins are available:
+Live site: <!-- live-url -->
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+![Portfolio Site](./public/screenshot.png)
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Single-page scroll layout with hash anchor navigation
+- Scroll-spy sidebar that highlights the active section as you scroll
+- Mobile hamburger menu with gradient overlay
+- Project detail pages using React Router dynamic routes
+- Hover-dimming effect on project cards (other cards fade when one is hovered)
+- Dark-only theme with a sky-blue accent palette
+- Custom Tailwind `@theme` tokens for site-wide color consistency
+- CSS-driven hover effects using `hover:` and `group-hover:` variants
+- Responsive layout tested across mobile and desktop breakpoints
+- 69 component tests across 11 test files
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+| Category | Technology |
+|---|---|
+| Framework | React 19 |
+| Build Tool | Vite |
+| Language | TypeScript |
+| Styling | Tailwind CSS v4 |
+| Routing | React Router |
+| Animation | Motion |
+| Icons | Phosphor Icons |
+| Testing | Vitest, Testing Library, jsdom |
+| Linter | ESLint |
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Color Palette
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+| Token | Hex | Usage |
+|---|---|---|
+| `accent` | `#38bdf8` | Links, active states, hover effects |
+| `heading` | `#e2e8f0` | Headings and titles |
+| `body` | `#94a3b8` | Body text and descriptions |
+| `card-border` | `#262626` | Project card borders |
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Background: `linear-gradient(180deg, #0f172a 0%, #0a0a0a 100%)`
 
+## Getting Started
+
+### Prerequisites
+
+- Node.js 22 or higher
+
+### Installation
+
+```bash
+git clone https://github.com/ashiq-webdev/portfolio-site.git
+cd portfolio-site
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Development
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+npm run dev
+```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Vite prints the local URL in your terminal. Open that URL in your browser.
+
+### Build
+
+```bash
+npm run build
+```
+
+The build output lands in `dist/`.
+
+### Preview Production Build
+
+```bash
+npm run preview
+```
+
+### Run Tests
+
+```bash
+npm run test
+```
+
+## Project Structure
 
 ```
+src/
+  components/
+    Layout/
+      Layout.tsx           # Shell wrapping Sidebar + Outlet + Footer
+      Sidebar.tsx          # Nav links, scroll-spy, hamburger menu
+    Home/
+      Hero.tsx             # Name and pitch
+      About.tsx            # Bio and skills grid
+      ProjectsGrid.tsx     # Project cards with hover-dimming
+      Contact.tsx          # Email CTA
+      Footer.tsx           # Tech credits and social icons
+    SocialIcons.tsx        # GitHub and LinkedIn links
+  pages/
+    HomePage.tsx           # Composes Hero, About, ProjectsGrid, Contact
+    ProjectDetailPage.tsx   # Case study with Overview, Tech, Features, Lessons
+    NotFoundPage.tsx       # 404 page
+  utils/
+    projects.ts            # Shared project data for grid and detail page
+  index.css                # Tailwind @theme tokens and global styles
+setupTests.js              # IntersectionObserver mock for jsdom
+```
+
+## Key Design Decisions
+
+**Dark-only theme.** A theme toggle adds complexity and bugs for no portfolio value. The site uses a single dark palette with a sky-blue accent color (#38bdf8).
+
+**Tailwind `@theme` tokens.** Custom colors are defined as CSS custom properties inside `@theme` in `index.css`. Tailwind generates `text-accent`, `bg-accent/10`, `border-accent/50` and all opacity variants from these tokens. No inline styles or JavaScript color values.
+
+**CSS-driven hover effects.** All hover states use `hover:` and `group-hover:` Tailwind variants in CSS. No JavaScript event handlers for styling.
+
+**`<a href>` for project cards.** Project cards use native anchor tags, not React Router `Link`. This forces a full page reload on navigation, which resets scroll position on the detail page.
+
+**Footer in Layout.** The footer renders once in `Layout.tsx` after the `<Outlet>`, so every page including the 404 gets it. No per-page duplication.
+
+**IntersectionObserver mock.** `setupTests.js` mocks `IntersectionObserver` with no-op methods because jsdom does not implement it. Without the mock, every Sidebar test crashes.
+
+## Testing
+
+The test suite covers 11 components and pages with 69 tests:
+
+- Content rendering: headings, paragraphs, links, alt text
+- Interactive elements: hamburger toggle, nav links, mailto links, project card links
+- Conditional rendering: project found, not found, in progress
+- Composition: HomePage section rendering, Layout structure
+
+Tests are co-located next to their components (`Hero.test.tsx` next to `Hero.tsx`).
+
+## License
+
+[MIT](LICENSE)
