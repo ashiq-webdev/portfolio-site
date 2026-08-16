@@ -3,7 +3,6 @@ const skills = [
   { name: 'JavaScript', status: 'Completed' },
   { name: 'HTML', status: 'Completed' },
   { name: 'CSS', status: 'Completed' },
-  { name: 'Bootstrap', status: 'Completed' },
   { name: 'Git & GitHub', status: 'Completed' },
   { name: 'TypeScript', status: 'Learning' },
   { name: 'Tailwind CSS', status: 'Learning' },
