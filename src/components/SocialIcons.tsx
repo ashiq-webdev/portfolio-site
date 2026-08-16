@@ -1,6 +1,10 @@
 import { GithubLogoIcon, LinkedinLogoIcon } from '@phosphor-icons/react';
 
-export function SocialIcons({ size }: { size: number }) {
+type SocialIconsProps = {
+  size: number;
+};
+
+export function SocialIcons({ size }: SocialIconsProps) {
   return (
     <>
       <a

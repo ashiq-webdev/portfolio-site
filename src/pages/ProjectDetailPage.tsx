@@ -1,4 +1,4 @@
-import { useParams, Link, useNavigate, useLocation } from 'react-router';
+import { useParams, Link, useNavigate } from 'react-router';
 import { ArrowLeftIcon, ArrowUpRightIcon, GithubLogoIcon } from '@phosphor-icons/react';
 import { projects } from '../utils/projects';
 
@@ -49,27 +49,18 @@ function CtaButton({ href, icon, children, className = '' }: CtaButtonProps) {
 export function ProjectDetailPage() {
   const { slug } = useParams();
   const navigate = useNavigate();
-  const location = useLocation();
   const project = projects.find((p) => p.slug === slug);
 
   function handleBackClick(e: React.MouseEvent<HTMLAnchorElement>) {
     e.preventDefault();
-    if (location.pathname !== '/') {
-      navigate('/');
-      setTimeout(() => {
-        const target = document.getElementById('projects');
-        if (target) {
-          window.history.pushState(null, '', '#projects');
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
-    } else {
-      window.history.pushState(null, '', '#projects');
+    navigate('/');
+    setTimeout(() => {
       const target = document.getElementById('projects');
       if (target) {
+        window.history.pushState(null, '', '#projects');
         target.scrollIntoView({ behavior: 'smooth' });
       }
-    }
+    }, 100);
   }
 
   if (!project) {
@@ -112,23 +103,25 @@ export function ProjectDetailPage() {
         <>
           {/* External links */}
           <div className="flex flex-col sm:flex-row gap-4 mb-16">
-            <CtaButton
-              href={project.githubUrl}
-              className="max-sm:max-w-25"
-              icon={
-                <GithubLogoIcon
-                  size={20}
-                  weight="regular"
-                  className="transition-transform duration-200 group-hover:scale-110"
-                />
-              }
-            >
-              Code
-          </CtaButton>
+            {project.githubUrl && (
+              <CtaButton
+                href={project.githubUrl}
+                className="max-sm:max-w-25"
+                icon={
+                  <GithubLogoIcon
+                    size={20}
+                    weight="regular"
+                    className="transition-transform duration-200 group-hover:scale-110"
+                  />
+                }
+              >
+                Code
+              </CtaButton>
+            )}
             {project.liveUrl && (
               <CtaButton
                 href={project.liveUrl}
-                className="max-sm:max-w-37.5"
+                className="max-sm:max-w-39"
                 icon={
                   <ArrowUpRightIcon
                     size={20}
@@ -138,7 +131,7 @@ export function ProjectDetailPage() {
                 }
               >
                 Visit Site
-            </CtaButton>
+              </CtaButton>
             )}
         </div>
 
