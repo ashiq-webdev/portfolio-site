@@ -2,7 +2,7 @@
 
 A single-page scroll developer portfolio built with React 19, Vite and Tailwind CSS v4. Left sidebar navigation on desktop, hamburger menu on mobile and project detail pages with dynamic routes.
 
-Live site: <!-- live-url -->
+🌐 Live site: [ashiqdev.com](https://ashiqdev.com)
 
 ![Portfolio Site](./public/screenshot.png)
 

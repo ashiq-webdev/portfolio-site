@@ -34,7 +34,7 @@ export const projects: Project[] = [
       'The biggest surprise was Tailwind v4 CSS layer system. A manual reset written outside Tailwind layers silently overrode all padding and margin utilities. Removing it and trusting Tailwind built-in Preflight fixed every layout bug at once.'
     ],
     githubUrl: 'https://github.com/ashiq-webdev/portfolio-site',
-    liveUrl: 'https://vercel.com',
+    liveUrl: 'https://ashiqdev.com',
   },
   {
     slug: 'prayer-times-uae',
